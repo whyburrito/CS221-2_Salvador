@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/auth/";
+const API_URL = "http://localhost:3000/api/auth";
 
 export const authService = {
   async register(userData) {
@@ -10,7 +10,7 @@ export const authService = {
       body: JSON.stringify(userData),
     });
 
-    const data = await message.json();
+    const data = await response.json();
 
     if (!response.ok) {
       throw new Error(data.message || "Regsitration failed");
@@ -28,7 +28,7 @@ export const authService = {
       body: JSON.stringify(credentials),
     });
 
-    const data = await message.json();
+    const data = await response.json();
 
     if (!response.ok) {
       throw new Error(data.message || "Login failed");
