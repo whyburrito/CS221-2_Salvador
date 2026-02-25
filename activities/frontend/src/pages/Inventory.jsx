@@ -6,6 +6,7 @@ import { useState, useEffect, use } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import TextArea from "../components/TextArea";
 import slugify from "slugify";
+import { useNavigate } from "react-router-dom";
 
 const Inventory = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,9 @@ const Inventory = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState();
   const [slug, setSlug] = useState("");
+
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +46,13 @@ const Inventory = () => {
     });
     setSlug(generatedSlug);
   }, [formData.name]);
+
+  useEffect(() => {
+    if (!user) {
+      alert("Please login to continue");
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <Card title="Create Product">
