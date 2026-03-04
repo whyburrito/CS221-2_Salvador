@@ -1,4 +1,4 @@
-import Login from "./pages/Login.jsx";
+import AuthPage from "./pages/AuthPage.jsx";
 import Inventory from "./pages/Inventory.jsx";
 import Landing from "./pages/Landing.jsx";
 import "./App.css";
@@ -11,7 +11,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/authPage" element={<AuthPage />} />
           <Route path="/inventory" element={<Inventory />} />
         </Routes>
       </AuthProvider>

@@ -12,7 +12,7 @@ export default function Header() {
           </div>
           <nav className="navigation">
             <a href="/">Home</a>
-            <a href="/login">Login</a>
+            <a href="/authPage">Login</a>
             <a href="/inventory">Inventory</a>
           </nav>
           <div className="auth-section">

@@ -1,7 +1,7 @@
 import Card from "../components/Card";
 import Button from "../components/button";
 import Input from "../components/Input";
-import "./Login.css";
+import "./Auth.css";
 import { useState, useEffect, use } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import TextArea from "../components/TextArea";
@@ -50,7 +50,7 @@ const Inventory = () => {
   useEffect(() => {
     if (!user) {
       alert("Please login to continue");
-      navigate("/login");
+      navigate("/authPage");
     }
   }, []);
 
