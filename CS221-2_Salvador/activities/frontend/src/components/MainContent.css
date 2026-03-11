@@ -25,11 +25,12 @@
   padding: 2rem;
   border: 1px solid #eee;
   border-radius: 10px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   background: #fafafa;
+  border-top: 4px solid var(--primary-blue);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.15);
 }

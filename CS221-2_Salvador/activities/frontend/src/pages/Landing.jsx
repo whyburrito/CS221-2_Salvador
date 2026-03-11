@@ -10,7 +10,7 @@ export default function Landing() {
       <Header />
       <Hero
         title="Welcome to My App"
-        description="RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+        description="Discover a new way to manage your inventory with our powerful and intuitive platform."
         buttonText="Get Started"
       />
       <MainContent />

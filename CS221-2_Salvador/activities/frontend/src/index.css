@@ -4,15 +4,15 @@
   font-weight: 400;
 
   /* Theme Colors */
-  --primary-blue: #1e90ff;
-  --secondary-green: #10b981;
+  --primary-blue: #8b5cf6; /* Now Purple */
+  --secondary-green: #c084fc; /* Now Lighter Purple */
   --background-white: #ffffff;
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --border-gray: #d1d5db;
   --error-red: #ef4444;
-  --hover-blue: #1d4ed8;
-  --hover-green: #059669;
+  --hover-blue: #7c3aed; /* Now Darker Purple */
+  --hover-green: #a855f7; /* Now Hover Lighter Purple */
 
   color: var(--text-dark);
   background-color: var(--background-white);

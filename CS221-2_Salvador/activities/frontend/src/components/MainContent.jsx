@@ -16,7 +16,7 @@ export default function MainContent() {
         <section className="intro-section">
           <h2>Introduction</h2>
           <p>
-            RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH2
+            Explore our amazing features designed to streamline your workflow and boost productivity.
           </p>
         </section>
         <div className="features-grid">

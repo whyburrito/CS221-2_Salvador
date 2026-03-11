@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "./button";
 import "./Header.css";
 
 export default function Header() {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className="landing-header">
@@ -16,7 +19,7 @@ export default function Header() {
             <a href="/inventory">Inventory</a>
           </nav>
           <div className="auth-section">
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="button" onClick={() => navigate("/authPage")}>
               Login
             </Button>
           </div>

@@ -9,13 +9,13 @@ export default function () {
           <div className="footer-brand">
             <h3>My App</h3>
             <p>
-              RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH2
+              Empowering your business with smart inventory solutions.
             </p>
           </div>
           <div className="footer-links">
             <div className="link-group">
               <a href="/">Home</a>
-              <a href="/login">Login</a>
+              <a href="/authPage">Login</a>
               <a href="/inventory">Inventory</a>
             </div>
           </div>
