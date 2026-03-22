@@ -47,5 +47,3 @@ By utilizing specialized OpenCode LLM agents, I was able to rapidly scale the ba
 3. Start the backend server: `npm run dev`
 4. Open a new terminal, navigate to the `/frontend` directory, and run `npm install`.
 5. Start the Vite development server: `npm run dev`
-
----
