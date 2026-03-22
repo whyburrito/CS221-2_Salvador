@@ -6,21 +6,30 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    slug: {
-      type: String,
-      unique: true,
-      lowercase: true,
-    }, // e.g., “lucky-me-pancit-canton”
-    description: {
-      type: String,
-    },
     price: {
       type: Number,
       required: true,
       min: 0,
     },
+    description: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    countInStock: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 export default mongoose.model("Product", ProductSchema);

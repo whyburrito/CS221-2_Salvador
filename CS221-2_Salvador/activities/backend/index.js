@@ -2,28 +2,25 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
-import inventoryRoutes from "./routes/inventoryRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 dotenv.config();
-
-//get -> display name, var name = "sean",
-//post -> logic, if usename="sean" password="Pass123" success else fail
-//http://localhost:3000/api/auth/login
-//http://localhost:3000/api/auth/register
-//http://localhost:3000/api/auth/logout
 
 app.use(express.json());
 app.use(
   cors({
     origin: "*",
-    methods: ["GET", "POST"],
-  }),
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
 );
-app.use("/api/auth", authRoutes);
-app.use("/api/inventory", inventoryRoutes);
+
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
 
 app.listen(PORT, () => {
   connectDB();

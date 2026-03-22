@@ -1,30 +1,45 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "./button";
-import "./Header.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { useCart } from "../contexts/CartContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Header() {
+  const { user, logout } = useAuth();
+  const { cartItems, clearCart } = useCart();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
+  const cartCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
+
+  const handleLogout = () => {
+    clearCart();
+    logout();
+    navigate("/");
+  };
+
   return (
-    <>
-      <header className="landing-header">
-        <div className="header-container">
-          <div className="logo">
-            <h2>My App</h2>
-          </div>
-          <nav className="navigation">
-            <a href="/">Home</a>
-            <a href="/authPage">Login</a>
-            <a href="/inventory">Inventory</a>
-          </nav>
-          <div className="auth-section">
-            <Button variant="primary" type="button" onClick={() => navigate("/authPage")}>
-              Login
-            </Button>
-          </div>
-        </div>
-      </header>
-    </>
+    <header className="header">
+      <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>S-Retail Hub</Link>
+      <nav className="nav-links">
+        <Link to="/products">All Products</Link>
+        <Link to="/cart">Cart ({cartCount})</Link>
+        {user ? (
+          <>
+            <Link to="/order-history">Orders</Link>
+            {user.role === "Admin" && <Link to="/admin/products">Admin Panel</Link>}
+            <span>Hi, {user.username}</span>
+            <button onClick={handleLogout}>Logout</button>
+          </>
+        ) : (
+          <Link to="/authPage">Login</Link>
+        )}
+        <button 
+          onClick={toggleTheme} 
+          style={{ background: 'transparent', border: '1px solid var(--border)', color: 'var(--text)' }}
+        >
+          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+        </button>
+      </nav>
+    </header>
   );
 }
